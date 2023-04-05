@@ -1,0 +1,81 @@
+.hero {
+  @extend %section;
+}
+
+.lockup__wrapper {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 2rem;
+
+  @include media("<phone") {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-items: left;
+    place-content: unset;
+  }
+}
+
+.lockup__title {
+  @extend %title-80;
+  font-weight: 500;
+  max-width: 80rem;
+  background: $light-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
+
+  @include media("<phone") {
+    text-align: left;
+    max-width: 28.9rem;
+  }
+}
+
+.lockup__text {
+  @extend %label-20;
+  max-width: 41.6rem;
+  width: 100%;
+  color: $secondary-100;
+
+  @include media("<phone") {
+    text-align: left;
+    max-width: 29.2rem;
+  }
+}
+
+.lockup__button__wrapper {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.lockup__button__wrapper:hover .lockup__button__effect {
+  opacity: 0.5;
+}
+
+.lockup__button__effect {
+  @extend %gradient__button;
+  position: absolute;
+  height: 4rem;
+  z-index: 1;
+  width: 100%;
+  margin-top: 2.54rem;
+  filter: blur(1.2rem);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.lockup__button {
+  @extend %gradient__button;
+  z-index: 2;
+}
+
+.lockup__button__text {
+  @extend %gradient__button__text;
+}
+
+.lockup__button__icon {
+  @extend %gradient__button__icon;
+}

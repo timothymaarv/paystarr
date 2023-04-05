@@ -1,0 +1,59 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  @extend %cover;
+  line-height: 1;
+  font-size: calc(100vw / 1512 * 10);
+
+  @include media("<phone") {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+
+img {
+  vertical-align: middle;
+  // opacity: 0;
+  // transition: opacity 0.4 cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  // &.loaded {
+  //   opacity: 1;
+  // }
+}
+
+// [data-animation="title"],
+// [data-animation="paragraph"],
+// [data-animation="label"] {
+//   span {
+//     display: inline-block;
+//     overflow: hidden;
+//     vertical-align: top;
+//   }
+// }
+
+.content {
+  // @extend %cover;
+  @extend %label-16;
+  font-family: $neue-montreal;
+  background: $secondary-500;
+  color: $white;
+}
+
+svg {
+  fill: none;
+}

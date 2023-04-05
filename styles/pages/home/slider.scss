@@ -1,0 +1,127 @@
+.slider {
+  width: 100%;
+}
+.slider__wrapper {
+  @extend %section;
+  position: relative;
+  padding: 19.2rem 11.2rem;
+  display: grid;
+  gap: 2rem;
+
+  @include media("<phone") {
+    padding: 12.8rem 2.4rem;
+  }
+}
+
+.slider__title {
+  @extend %title-48;
+  max-width: 54.2rem;
+}
+
+.slider__text {
+  @extend %label-20;
+  max-width: 44rem;
+}
+
+.slider__button {
+  @extend %dark__button;
+}
+
+.slider__button__text {
+  @extend %dark__button__text;
+}
+
+.slider__button__icon {
+  @extend %dark__button__icon;
+}
+
+.slider__items {
+  width: 100%;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin-top: 6.4rem;
+  //   border-top: 0.1rem solid green;
+  //   background-color: green;
+
+  @include media("<phone") {
+    grid-template-columns: auto;
+    margin-top: 16.4rem;
+  }
+}
+
+.slide {
+  width: 100%;
+  gap: 6.4rem;
+  cursor: pointer;
+  //   max-width: 35rem;
+
+  @include media("<phone") {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.slide .bar {
+  width: 100%;
+  height: 0.1rem;
+  background-color: $secondary-100;
+  margin-bottom: 6.4rem;
+
+  @include media("<phone") {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.slide .progress {
+  width: 0%;
+  height: 0.1rem;
+  background-color: $secondary-100;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.slide .progress .active {
+  width: 100%;
+  height: 0.1rem;
+  background-color: $primary-500;
+}
+
+.slide__image__wrapper {
+  //   position: absolute;
+  //   right: 0;
+}
+.slide__image {
+  top: 19.2rem;
+  position: absolute;
+  right: 17.8rem;
+  will-change: z-index;
+  transition: z-index 300ms cubic-bezier(0.77, 0, 0.18, 1);
+
+  @include media("<phone") {
+    // position: unset;
+    position: absolute;
+    top: 41.74rem;
+    left: 2.4rem;
+  }
+}
+
+.slide__title {
+  @extend %title-20;
+
+  @include media("<phone") {
+    font-family: $neue-montreal;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+  }
+}
+
+.slide__text {
+  @extend %label-16;
+  margin-top: 1.2rem;
+  max-width: 35rem;
+
+  @include media("<phone") {
+    max-width: 31.2rem;
+    width: 100%;
+  }
+}

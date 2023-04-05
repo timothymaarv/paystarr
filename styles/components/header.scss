@@ -1,0 +1,39 @@
+.header {
+  padding: 2.4rem 11.2rem;
+
+  @include media("<phone") {
+    padding: 2.4rem;
+  }
+}
+
+.header__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 15.5rem;
+  height: 4.022rem;
+
+  @include media("<phone") {
+    width: 9.6rem;
+    height: 2.491rem;
+  }
+}
+
+.header__button {
+  @extend %dark__button;
+}
+
+.header__button__text {
+  @extend %dark__button__text;
+}
+
+.header__button__icon {
+  @extend %dark__button__icon;
+}
+
+// .slider__button__icon {
+// }

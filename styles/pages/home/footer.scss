@@ -1,0 +1,52 @@
+.footer {
+  background: $color-gradient;
+  width: 100%;
+}
+
+.footer__wrapper {
+  @extend %section;
+  display: grid;
+  justify-items: center;
+  gap: 4.8rem;
+}
+
+.footer__text {
+  @extend %title-48;
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer__button__wrapper {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+}
+
+.footer__button__wrapper:hover .footer__button__effect {
+  opacity: 0.5;
+}
+
+.footer__button {
+  @extend %white__button;
+  z-index: 2;
+}
+
+.footer__button__effect {
+  @extend %white__button;
+  position: absolute;
+  height: 4rem;
+  z-index: 1;
+  width: 100%;
+  margin-top: 2.54rem;
+  filter: blur(1.2rem);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.footer__button__text {
+  @extend %white__button__text;
+}
+
+.footer__button__icon {
+  @extend %white__button__icon;
+}

@@ -1,0 +1,113 @@
+extends ../base
+
+block variables
+  -var template = 'home'
+
+block content
+    .home   
+      .home__wrapper
+        each section in home.data.body  
+          if section.slice_type === 'hero'
+            section.hero 
+              div.lockup__wrapper
+                h1.lockup__title!=section.primary.hero__title[0].text
+                p.lockup__text!=section.primary.hero__text[0].text.replace(/\n/g, '<br/>')
+                a.lockup__button__wrapper(href="#") 
+                  button.lockup__button 
+                    p.lockup__button__text Join the waitlist
+                    svg.lockup__button__icon(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M5.5 3L10.5 8L5.5 13" stroke="#DBE2F0" stroke-linecap="round" stroke-linejoin="round")
+                  button.lockup__button__effect
+
+          if section.slice_type === 'feature'
+            .features__container
+              section.features 
+                div.features__wrapper
+                  h2.features__title!=section.primary.features__title[0].text.replace(/\n/g, '<br/>')
+                  p.features__text!=section.primary.features__text[0].text.replace(/\n/g, '<br/>')
+
+                  .feature__wrapper
+                    each item in section.items 
+                      div.feature__item
+                        if item.feature__name[0].text === "Send"
+                          lottie-player(loop mode="normal" src="/public/animated/send.json" style="width: 6rem; height: auto;")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(opacity="0.4" d="M26.1868 12.8778L16.4851 22.5795" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M16.4854 22.58L5.12709 15.635C3.63875 14.725 3.94042 12.48 5.61709 11.995L32.4338 4.24829C33.9588 3.80662 35.3688 5.22995 34.9121 6.74995L26.9554 33.3566C26.4571 35.0233 24.2221 35.31 23.3188 33.8233L16.4854 22.58Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        if item.feature__name[0].text === "Receive"
+                          lottie-player( loop mode="normal" src="/public/animated/receive.json" style="width: 12rem; height: auto;")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(d="M36.065 23.9929H29.3178C26.8404 23.9914 24.8323 21.9848 24.8308 19.5074C24.8308 17.03 26.8404 15.0235 29.3178 15.022H36.065" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(d="M30.081 19.4048H29.5615" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M12.9129 5H27.3186C32.1488 5 36.0647 8.91585 36.0647 13.7461V25.7078C36.0647 30.5381 32.1488 34.4539 27.3186 34.4539H12.9129C8.0826 34.4539 4.16675 30.5381 4.16675 25.7078V13.7461C4.16675 8.91585 8.0826 5 12.9129 5Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(opacity="0.4" d="M11.7261 12.5636H20.7243" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        if item.feature__name[0].text === "Secure"
+                          lottie-player(loop mode="normal" src="/public/animated/secure.json" style="width: 10rem; height: auto; ")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(opacity="0.4" d="M27.3723 15.7464V12.168C27.3723 7.9797 23.9757 4.58296 19.7873 4.58296C15.599 4.5647 12.189 7.9447 12.1707 12.1347V12.168V15.7464" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M26.1386 35.416H13.4036C9.91362 35.416 7.08362 32.5877 7.08362 29.096V21.9477C7.08362 18.456 9.91362 15.6277 13.4036 15.6277H26.1386C29.6286 15.6277 32.4586 18.456 32.4586 21.9477V29.096C32.4586 32.5877 29.6286 35.416 26.1386 35.416Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(d="M19.7715 23.6711V27.3728" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        if item.feature__name[0].text === "Support"
+                          lottie-player(loop mode="normal" src="/public/animated/support.json" style="width: 9rem; height: auto;")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(opacity="0.4" d="M29.8127 18.1614C32.1377 17.8347 33.9277 15.8414 33.9327 13.4264C33.9327 11.0464 32.1977 9.07304 29.9227 8.69971" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(d="M32.8809 23.7505C35.1325 24.0872 36.7042 24.8755 36.7042 26.5005C36.7042 27.6188 35.9642 28.3455 34.7675 28.8022" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M19.8111 24.4397C14.4544 24.4397 9.87939 25.2514 9.87939 28.493C9.87939 31.733 14.4261 32.568 19.8111 32.568C25.1677 32.568 29.7411 31.7647 29.7411 28.5214C29.7411 25.278 25.1961 24.4397 19.8111 24.4397Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M19.8111 19.8133C23.3261 19.8133 26.1761 16.9649 26.1761 13.4483C26.1761 9.93325 23.3261 7.08325 19.8111 7.08325C16.2961 7.08325 13.4461 9.93325 13.4461 13.4483C13.4328 16.9516 16.2611 19.8016 19.7645 19.8133H19.8111Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(opacity="0.4" d="M9.80799 18.1614C7.48132 17.8347 5.69299 15.8414 5.68799 13.4264C5.68799 11.0464 7.42299 9.07304 9.69799 8.69971" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(d="M6.73984 23.7505C4.48817 24.0872 2.9165 24.8755 2.9165 26.5005C2.9165 27.6188 3.6565 28.3455 4.85317 28.8022" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        if item.feature__name[0].text === "Speed"
+                          lottie-player(loop mode="normal" src="/public/animated/speed.json" style="width: 8rem; height: auto;")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M35.4163 20.0009C35.4163 28.5159 28.5147 35.4176 19.9997 35.4176C11.4847 35.4176 4.58301 28.5159 4.58301 20.0009C4.58301 11.4859 11.4847 4.58423 19.9997 4.58423C28.5147 4.58423 35.4163 11.4859 35.4163 20.0009Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(opacity="0.4" d="M25.7191 24.9048L19.4358 21.1565V13.0781" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        if item.feature__name[0].text === "Compliance"
+                          lottie-player(loop mode="normal" src="/public/animated/compliance.json" style="width: 6rem; height: auto;")
+                          //- svg.feature__icon(width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          //-   path(fill-rule="evenodd" clip-rule="evenodd" d="M31.4417 8.53978C32.17 8.79478 32.6567 9.48144 32.6567 10.2531V21.5414C32.6567 24.6964 31.51 27.7081 29.485 30.0414C28.4667 31.2164 27.1784 32.1314 25.81 32.8714L19.88 36.0748L13.94 32.8698C12.57 32.1298 11.28 31.2164 10.26 30.0398C8.23337 27.7064 7.08337 24.6931 7.08337 21.5348V10.2531C7.08337 9.48144 7.57004 8.79478 8.29837 8.53978L19.2684 4.68478C19.6584 4.54811 20.0834 4.54811 20.4717 4.68478L31.4417 8.53978Z" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+                          //-   path(opacity="0.4" d="M15.5376 19.8629L18.6909 23.0179L25.1876 16.5212" stroke="#D2DFFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round")
+
+                        h3.feature__item__title!=item.feature__name[0].text.replace(/\n/g, '<br/>')
+                        p.feature__item__text!=item.feature__description[0].text.replace(/\n/g, '<br/>')
+
+          if section.slice_type === 'slider'
+            section.slider 
+              div.slider__wrapper
+                h2.slider__title!=section.primary.slider__title[0].text.replace(/\n/g, '<br/>')
+                p.slider__text!=section.primary.slider__text[0].text.replace(/\n/g, '<br/>')
+                button.slider__button 
+                    p.slider__button__text Join the waitlist
+                    svg.slider__button__icon(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M5.5 3L10.5 8L5.5 13" stroke="#DBE2F0" stroke-linecap="round" stroke-linejoin="round")
+
+                .slider__items
+                  each item in section.items 
+                    div.slide
+                      .bar 
+                        .progress
+                      figure.slide__image__wrapper
+                        img.slide__image(src=`${item.slide__image.url}`, alt="")
+                      h3.slide__title!=item.slide__title[0].text
+                      p.slide__text!=item.slide__text[0].text.replace(/\n/g, '<br/>')
+          
+          if section.slice_type === 'footer'
+            section.footer
+              .footer__wrapper
+                h2.footer__text!=section.primary.footer__text[0].text.replace(/\n/g, '<br/>')
+                a.footer__button__wrapper(href="#") 
+                  button.footer__button 
+                    p.footer__button__text Join the waitlist
+                    svg.footer__button__icon(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                      path(d="M5.5 3L10.5 8L5.5 13" stroke="#101828" stroke-linecap="round" stroke-linejoin="round")
+                  button.footer__button__effect
+
+                    
+                      
+
+
+

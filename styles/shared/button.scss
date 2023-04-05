@@ -1,0 +1,107 @@
+// gradient button
+// dark button
+// white button
+
+%dark__button {
+  display: flex;
+  gap: 0.8rem;
+  //   height: 4rem;
+  outline: none;
+  border: none;
+  border-radius: 2.4rem;
+  background-color: $secondary-300;
+  align-items: center;
+  color: $primary-extra;
+  padding: 1rem 1.6rem;
+  max-width: max-content;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%dark__button:hover {
+  background-color: $secondary-400;
+}
+
+%dark__button:hover %dark__button__icon {
+  transform: translateX(0.2rem);
+}
+
+%dark__button__text {
+  @extend %label-14;
+  font-weight: 600;
+}
+
+%dark__button__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%gradient__button {
+  display: flex;
+  gap: 0.8rem;
+  //   height: 4rem;
+  outline: none;
+  border: none;
+  border-radius: 2.4rem;
+  background: $color-gradient;
+  align-items: center;
+  color: $primary-extra;
+  padding: 1rem 1.6rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%gradient__button__text {
+  @extend %label-14;
+  font-weight: 600;
+}
+
+%gradient__button__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%gradient__button:hover {
+  //   background-color: $secondary-400;
+}
+
+%gradient__button:hover %gradient__button__icon {
+  transform: translateX(0.2rem);
+}
+
+%white__button {
+  display: flex;
+  gap: 0.8rem;
+  outline: none;
+  border: none;
+  border-radius: 2.4rem;
+  background: $white;
+  align-items: center;
+  color: $secondary-500;
+  padding: 1rem 1.6rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%white__button__text {
+  @extend %label-14;
+  font-weight: 600;
+}
+
+%white__button__icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+%white__button:hover {
+  //   background-color: $secondary-400;
+}
+
+%white__button:hover %white__button__icon {
+  transform: translateX(0.2rem);
+}

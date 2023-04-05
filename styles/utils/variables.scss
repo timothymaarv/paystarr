@@ -1,0 +1,36 @@
+$primary-extra: #e6f1fe;
+
+$primary-100: #d2dffe;
+$primary-200: #8faefc;
+$primary-300: #4478fa;
+$primary-400: #1e5df9;
+$primary-500: #194ed0;
+
+$secondary-100: #dbe2f0;
+$secondary-200: #2c426d;
+$secondary-300: #1d2c49;
+$secondary-400: #162137;
+$secondary-500: #101828;
+
+$color-gradient: linear-gradient(
+  127.99deg,
+  #2b86f9 -1.76%,
+  #184ef9 97.65%,
+  #2b86f9 124.64%
+);
+$light-gradient: linear-gradient(
+  100.11deg,
+  #ffffff 22.47%,
+  rgba(255, 255, 255, 0.4) 121.09%
+);
+
+$white: #ffffff;
+
+$neue-montreal: "Neue Montreal";
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+// $z-indexes: (
+//     'navigation',
+//     'content'
+// );
